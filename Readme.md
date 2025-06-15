@@ -30,25 +30,25 @@ cd MERN_GYM_WEBSITE
 There are two .env files to configure:
 
 ## frontend/.env
+This port is already defined in .env file
+
 ```bash
-VITE_BACKEND_URL=http://localhost:your-backend-port
+VITE_BACKEND_URL=http://localhost:4000
 ```
 This URL should point to your backend server.
 
 ## backend/config.env
-
+You can define SMTP_MAIL & SMTP_PASSWORD, but donot edit any other enviroment variable
 ```bash
 FRONTEND_URL=http://localhost:5173
-PORT=your-backend-port
-MONGO_URI=mongodb://localhost:your-connection-port/gymWebsite
+PORT=4000
+MONGO_URI=mongodb://your-localhost-port-number/gymWebsite
 
 SMTP_HOST=smtp.gmail.com
 SMTP_PORT=587
 SMTP_SERVICE=gmail
-SMTP_MAIL=your-email@gmail.com
-SMTP_PASSWORD=your-app-password
-
-## Replace the values with your own:
+SMTP_MAIL=your-email-address
+SMTP_PASSWORD="your-app-password" # From google
 ```
 
 Use MongoDB Compass or your preferred method to get a MongoDB connection URI.
