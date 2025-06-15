@@ -12,7 +12,6 @@ config({ path: "./config.env" });
 connectDB();
 
 // MIDDLEWARES
-app.options('*', cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
@@ -36,7 +35,7 @@ app.post("/send/mail", async (req, res) => {
 
   try {
     await sendEmail({
-      email: "waliizafri@gmail.com",
+      email: process.env.SMTP_MAIL,
       subject: "GYM WEBSITE CONTACT",
       message,
       userEmail: email,
